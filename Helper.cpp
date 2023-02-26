@@ -79,8 +79,8 @@ void Helper::printEnd(int numDay,int numEmployee) {
     cout << "The simulation has ended." << endl;
     cout << "The number of additional workers was " << numEmployee << "." << endl;
     cout << "The total number of work days was " << numDay << "." << endl;
-    cout << "The cost of the additional workers was $" << Revenue::getTotalWage() << endl;
-    cout << "The total profit before paying workers was $" << Revenue::getProfit() << endl;
-    cout << "The total profit when considering additional workers was $" << Revenue::getTotalProfit() << endl;
+    cout << "The cost of the additional workers was $" << Revenue::getTotalWage() << "." << endl;
+    cout << "The total profit before paying workers was $" << Revenue::getProfit() << "." << endl;
+    cout << "The total profit when considering additional workers was $" << Revenue::getTotalProfit() << "." << endl;
     cout << "############################" << endl;
 }

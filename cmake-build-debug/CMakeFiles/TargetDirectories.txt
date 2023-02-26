@@ -1,0 +1,3 @@
+/Users/jshen/Library/CloudStorage/OneDrive-UniversityofManitoba/MyUoM/2022-2023/Term 2/COMP 2150/Assignments/a2/Amazin2.0/cmake-build-debug/CMakeFiles/Amazin2_0.dir
+/Users/jshen/Library/CloudStorage/OneDrive-UniversityofManitoba/MyUoM/2022-2023/Term 2/COMP 2150/Assignments/a2/Amazin2.0/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/jshen/Library/CloudStorage/OneDrive-UniversityofManitoba/MyUoM/2022-2023/Term 2/COMP 2150/Assignments/a2/Amazin2.0/cmake-build-debug/CMakeFiles/rebuild_cache.dir

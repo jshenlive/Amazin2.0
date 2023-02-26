@@ -26,5 +26,5 @@ PrepareEvent::~PrepareEvent() {}
 void PrepareEvent::print() {
     cout << "TIME: " << order->getStartTime() << " -> ";
     order->print();
-    cout << " is being prepared (prep.time = " << order->getProcessingTime() << " )." << endl;
+    cout << " is being prepared (prep.time = " << order->getProcessingTime() << ")." << endl;
 }

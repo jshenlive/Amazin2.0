@@ -22,5 +22,5 @@ ArrivalEvent::ArrivalEvent(int h, Order* o) {
 void ArrivalEvent::print() {
     cout << "TIME: " << order->getArrivalTime() << " -> ";
     order->print();
-    cout << " arrives" << endl;
+    cout << " arrives." << endl;
 }
