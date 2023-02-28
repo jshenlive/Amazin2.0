@@ -2,7 +2,7 @@
 //
 // Author: Jesse Shen, 7909192
 //
-// REMARKS: Subclass of Queue, simulates an EventQueue, takes in orders and process them in order, with shipping events processed first, then by orderID
+// REMARKS: Subclass of List, simulates an EventQueue, takes in orders and process them in order, with shipping events processed first, then by orderID
 //
 //-----------------------------------------
 
@@ -18,15 +18,16 @@ using namespace std;
 EventQueue::EventQueue() {}
 
 EventQueue::EventQueue(int numEmployee) : numEmployee(numEmployee + 1) {
-    prepareList = new Queue();
-    arrivalList = new Queue();
-    shippingList = new Queue();
-    emptyNodes = new Queue();
+    prepareList = new List();
+    arrivalList = new List();
+    shippingList = new List();
+    emptyNodes = new List();
+    currentQueue = new List();
 }
 
 //Destructor
 EventQueue::~EventQueue() {
-    //each list is an instance of Queue which deletes its Nodes and items
+    //each list is an instance of List which deletes its Nodes and items
     delete prepareList;
     delete arrivalList;
     delete shippingList;
@@ -203,19 +204,19 @@ void EventQueue::runEventQueue(int currHour) {
     }
 
     //prints out all events at the current hour
-    Node *eventNode = top;
+    Node *eventNode = currentQueue->getTop();
     while (eventNode != nullptr) {
         Node *next = eventNode->getNext();
         eventNode->getItem()->print();
         eventNode = next;
-        top = eventNode;
+        currentQueue->setTop(eventNode);
     }
 }
 
 //add Event to EventQueue
 void EventQueue::addEvent(Event *event) {
-    if (top == nullptr) {
-        top = new Node(event, nullptr);
+    if (currentQueue->getTop() == nullptr) {
+        currentQueue->setTop(new Node(event, nullptr));
     } else {
         orderedInsert(new Node(event, nullptr));
     }
@@ -238,12 +239,12 @@ void EventQueue::orderedInsert(Node *node) {
     int newOrderId = newOrder->getId();
 
     //pointers for current Event values
-    Event *topEvent = top->getEvent();
+    Event *topEvent = currentQueue->getTop()->getEvent();
     Order *topOrder = topEvent->getOrder();
     int topOrderId = topOrder->getId();
 
     //helper pointers
-    Node *curr = top;
+    Node *curr = currentQueue->getTop();
     Event *currEvent;
     Order *currOrder;
     int currOrderId;
@@ -252,18 +253,18 @@ void EventQueue::orderedInsert(Node *node) {
     if (0 == newEvent->getLabel().compare(shipping)) {
 
         if (0 != topEvent->getLabel().compare(shipping)) { // if top is not shipping type event
-            node->setNext(top);
-            top = node;
+            node->setNext(currentQueue->getTop());
+            currentQueue->setTop(node);
 
-        } else if (top->getNext() == nullptr) { //only one node to compare
+        } else if (currentQueue->getTop()->getNext() == nullptr) { //only one node to compare
             if (topOrderId > newOrderId) {
-                node->setNext(top);
-                top = node;
+                node->setNext(currentQueue->getTop());
+                currentQueue->setTop(node);
             } else {
-                top->setNext(node);
+                currentQueue->getTop()->setNext(node);
             }
         } else {    //all other cases when newEvent is a shipping type
-            curr = top;
+            curr = currentQueue->getTop();
             currEvent = curr->getNext()->getEvent();
             currOrder = currEvent->getOrder();
             currOrderId = currOrder->getId();
@@ -280,12 +281,12 @@ void EventQueue::orderedInsert(Node *node) {
         }
     } else {  //if newNode is not shipping event
 
-        if (top->getNext() == nullptr) { // if only one event in the queue
+        if (currentQueue->getTop()->getNext() == nullptr) { // if only one event in the queue
             if (0 != topEvent->getLabel().compare(shipping) && topOrderId > newOrderId) {
-                node->setNext(top);
-                top = node;
+                node->setNext(currentQueue->getTop());
+                currentQueue->setTop(node);
             } else {
-                top->setNext(node);
+                currentQueue->getTop()->setNext(node);
             }
         } else if (curr->getNext() != nullptr) { // all other cases
             currEvent = curr->getNext()->getEvent();

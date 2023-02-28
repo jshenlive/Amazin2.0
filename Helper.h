@@ -8,11 +8,11 @@
 
 #pragma once
 
-class Queue;
+class List;
 
 class Helper {
 public:
-    static void startSimulation(Queue *, int);
+    static void startSimulation(List *, int);
     static void printEnd(int,int);
 
 };

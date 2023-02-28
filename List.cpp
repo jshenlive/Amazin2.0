@@ -1,20 +1,20 @@
-// CLASS: Queue
+// CLASS: List
 //
 // Author: Jesse Shen, 7909192
 //
-// REMARKS: Creates a Generic List of Queue
+// REMARKS: Creates a Generic List of List
 //
 //-----------------------------------------
-#include "Queue.h"
+#include "List.h"
 #include <iostream>
 
 using namespace std;
 
-Queue::Queue() : top(nullptr) { length = 0; }
+List::List() : top(nullptr) { length = 0; }
 
 //destructor
 //deletes nodes
-Queue::~Queue() {
+List::~List() {
     Node *curr = top;
     Node *next;
     while (curr != nullptr) {
@@ -25,13 +25,13 @@ Queue::~Queue() {
 }
 
 //add new Node to front
-void Queue::addFront(Node *node) {
+void List::addFront(Node *node) {
     node->setNext(top);
     top = node;
 }
 
 //add new item to end of list
-void Queue::addNode(Company *item) {
+void List::addNode(Company *item) {
     Node *newNode = new Node(item, nullptr);
     if (top == nullptr) {
         top = newNode;
@@ -46,32 +46,32 @@ void Queue::addNode(Company *item) {
 };
 
 //moves the Node from top of
-Node *Queue::removeTopNode() {
+Node *List::removeTopNode() {
     Node *removed = top;
     top = top->getNext();
     length--;
     return removed;
 }
 
-bool Queue::isEmpty() {
+bool List::isEmpty() {
     return (top == nullptr);
 }
 
-Node *Queue::getTop() {
+Node *List::getTop() {
     return top;
 }
 
-int Queue::getLength() {
+int List::getLength() {
     return length;
 }
 
-void Queue::setTop(Node *t) {
+void List::setTop(Node *t) {
     top = t;
 }
 
-void Queue::incLength() {
+void List::incLength() {
     length++;
 }
 
-void Queue::print() {
+void List::print() {
 }

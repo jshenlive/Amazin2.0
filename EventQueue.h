@@ -2,21 +2,23 @@
 //
 // Author: Jesse Shen, 7909192
 //
-// REMARKS: Subclass of Queue, simulates an EventQueue, takes in orders and process them in order, with shipping events processed first, then by orderID
+// REMARKS: Subclass of List, simulates an EventQueue, takes in orders and process them in order, with shipping events processed first, then by orderID
 //
 //-----------------------------------------
 #pragma once
 
-#include "Queue.h"
+#include "List.h"
+//class List
 #include "Order.h"
 
-class EventQueue : public Queue {
+class EventQueue {
 private:
     int numEmployee;
-    Queue* prepareList;
-    Queue* arrivalList;
-    Queue* shippingList;
-    Queue* emptyNodes;
+    List* prepareList;
+    List* arrivalList;
+    List* shippingList;
+    List* emptyNodes;
+    List* currentQueue;
 //    int numShippedItems;
 
 public:
@@ -35,9 +37,11 @@ public:
 
     void addShippingEvent(int, Order *);
 
+    void addEvent(Event*);
+
     void runEventQueue(int);
 
-    void addEvent(Event*);
+
 
     void orderedInsert(Node *);
 

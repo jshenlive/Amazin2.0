@@ -15,7 +15,7 @@
 
 using namespace std;
 
-void Helper::startSimulation(Queue *orderList, int numEmployee) {
+void Helper::startSimulation(List *orderList, int numEmployee) {
 
     //Start simulation process
     cout << "Simulation begins..." << endl;

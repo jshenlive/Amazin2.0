@@ -1,8 +1,8 @@
-// CLASS: Queue
+// CLASS: List
 //
 // Author: Jesse Shen, 7909192
 //
-// REMARKS: Creates a Generic List of Queue
+// REMARKS: Creates a Generic List of List
 //
 //-----------------------------------------
 #pragma once
@@ -12,15 +12,15 @@
 
 //class Node;
 
-class Queue {
+class List {
 protected:
     Node *top;
     Node *next;
     int length;
 public:
-    Queue();
+    List();
 
-    ~Queue();
+    ~List();
 
     void print();
 

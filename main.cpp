@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include "Order.h"
-#include "Queue.h"
+#include "List.h"
 #include "Helper.h"
 #include <fstream> //necessary to use ifstream (to open a file)
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     string line;
 
     Order *newOrder;
-    Queue *orderList = new Queue();
+    List *orderList = new List();
     while (getline(inputFile, line))  //gets the next line from the file and saves it in 'line', if there is one
     {
         //add new order using line from file
