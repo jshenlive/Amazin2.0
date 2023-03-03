@@ -11,23 +11,22 @@
 
 
 class Node {
-private:
-    Company* item;
-    Node* next;
+    private:
+        Company* item;
+        Node* next;
 
-public:
-    //Constructor
-    Node(Company*, Node*);
+    public:
+        //Constructor
+        Node(Company*, Node*);
 
-    //Destructor
-    ~Node();
+        //Destructor
+        ~Node();
 
-    //Mutator
-    void setNext(Node*);
+        //Mutator
+        void setNext(Node*);
 
-    //Getters
-    Node* getNext();
-    Event* getEvent();
-    Company* getItem();
-
+        //Getters
+        Node* getNext();
+        Event* getEvent();
+        Company* getItem();
 };

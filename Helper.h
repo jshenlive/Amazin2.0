@@ -11,8 +11,7 @@
 class List;
 
 class Helper {
-public:
-    static void startSimulation(List *, int);
-    static void printEnd(int,int);
-
+    public:
+        static void startSimulation(List *, int);
+        static void printEnd(int,int);
 };

@@ -11,17 +11,16 @@
 #include "ArrivalEvent.h"
 
 class PrepareEvent : public Event {
-public:
-    //constructor
-    PrepareEvent();
+    public:
+        //constructor
+        PrepareEvent();
 
-    PrepareEvent(int, Order *);
+        PrepareEvent(int, Order *);
 
-    //destructor
-    ~PrepareEvent();
+        //destructor
+        ~PrepareEvent();
 
-    //override method
-    virtual void print() override;
-
+        //override method
+        virtual void print() override;
 };
 

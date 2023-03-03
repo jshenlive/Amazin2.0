@@ -7,37 +7,35 @@
 //-----------------------------------------
 #pragma once
 
-//#include "Company.h"
 #include "Node.h"
 
-//class Node;
-
 class List {
-protected:
-    Node *top;
-    Node *next;
-    int length;
-public:
-    List();
+    protected:
+        Node *top;
+        Node *next;
+        int length;
 
-    ~List();
+    public:
+        List();
 
-    void print();
+        ~List();
 
-    void addNode(Company *);
+        void print();
 
-    void addFront(Node *);
+        void addNode(Company *);
 
-    Node *removeTopNode();
+        void addFront(Node *);
 
-    bool isEmpty();
+        Node *removeTopNode();
 
-    Node *getTop();
+        bool isEmpty();
 
-    int getLength();
+        Node *getTop();
 
-    void setTop(Node *);
+        int getLength();
 
-    void incLength();
+        void setTop(Node *);
+
+        void incLength();
 };
 

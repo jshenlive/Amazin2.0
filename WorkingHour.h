@@ -8,26 +8,25 @@
 #pragma once
 
 class WorkingHour {
-private:
-    int currentDay;
-    int currentHour;
-public:
+    private:
+        int currentDay;
+        int currentHour;
+    public:
 
-    //Constructor
-    WorkingHour();
+        //Constructor
+        WorkingHour();
 
-    //Destructor
-    ~WorkingHour();
+        //Destructor
+        ~WorkingHour();
 
-    //Getters
-    int getCurrentHour();
+        //Getters
+        int getCurrentHour();
 
-    int getCurrentDay();
+        int getCurrentDay();
 
-    //Mutators
-    void addWorkingHour();
+        //Mutators
+        void addWorkingHour();
 
-    void addWorkingDay();
-
+        void addWorkingDay();
 };
 

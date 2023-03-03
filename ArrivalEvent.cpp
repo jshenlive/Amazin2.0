@@ -14,7 +14,6 @@ ArrivalEvent::ArrivalEvent() {}
 ArrivalEvent::~ArrivalEvent() {}
 
 ArrivalEvent::ArrivalEvent(int h, Order* o) {
-//    startTime = h;
     order = o;
     label = "arrival";
 }

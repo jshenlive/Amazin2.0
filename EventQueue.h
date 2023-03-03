@@ -8,46 +8,39 @@
 #pragma once
 
 #include "List.h"
-//class List
 #include "Order.h"
 
 class EventQueue {
-private:
-    int numEmployee;
-    List* prepareList;
-    List* arrivalList;
-    List* shippingList;
-    List* emptyNodes;
-    List* currentQueue;
-//    int numShippedItems;
+    private:
+        int numEmployee;
+        List* prepareList;
+        List* arrivalList;
+        List* shippingList;
+        List* emptyNodes;
+        List* currentQueue;
 
-public:
-    //constructor
-    EventQueue();
+    public:
+        //constructor
+        EventQueue();
 
-    EventQueue(int);
+        EventQueue(int);
 
-    //destructor
-    ~EventQueue();
+        //destructor
+        ~EventQueue();
 
-    //instance methods
-    void addArrivalEvent(int, Order *);
+        //instance methods
+        void addArrivalEvent(int, Order *);
 
-    void addPrepareEvent(int, Order *);
+        void addPrepareEvent(int, Order *);
 
-    void addShippingEvent(int, Order *);
+        void addShippingEvent(int, Order *);
 
-    void addEvent(Event*);
+        void addEvent(Event*);
 
-    void runEventQueue(int);
+        void runEventQueue(int);
 
+        void orderedInsert(Node *);
 
-
-    void orderedInsert(Node *);
-
-
-    //getters
-    int getNumShippedItems();
-
-
+        //getters
+        int getNumShippedItems();
 };

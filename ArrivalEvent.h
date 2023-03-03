@@ -10,16 +10,15 @@
 #include "Event.h"
 
 class ArrivalEvent : public Event{
+    public:
+        //Constructor
+        ArrivalEvent();
+        ArrivalEvent(int,Order*);
 
-public:
-    //Constructor
-    ArrivalEvent();
-    ArrivalEvent(int,Order*);
+        //Destructor
+        ~ArrivalEvent();
 
-    //Destructor
-    ~ArrivalEvent();
-
-    //Overwrite Method
-    virtual void print() override;
+        //Overwrite Method
+        virtual void print() override;
 };
 

@@ -15,25 +15,25 @@ using namespace std;
 class Order;
 
 class Event : public Company {
-protected:
-    Order *order;
-    string label;
+    protected:
+        Order *order;
+        string label;
 
-public:
-    //constructor
-    Event();
+    public:
+        //constructor
+        Event();
 
-    //destructor
-    ~Event();
+        //destructor
+        ~Event();
 
-    //instance methods
-    virtual void print() override;
+        //instance methods
+        virtual void print() override;
 
-    //accessors
-    virtual int getId() override;
+        //accessors
+        virtual int getId() override;
 
-    virtual string getLabel();
+        virtual string getLabel();
 
-    Order *getOrder();
+        Order *getOrder();
 };
 

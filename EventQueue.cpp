@@ -160,7 +160,6 @@ void EventQueue::addShippingEvent(int currHour, Order *order) {
     shippingList->incLength();
 
     //add shipping event to eventQueue and prints out message
-
     addEvent(newShipping);
 
 }
@@ -251,7 +250,6 @@ void EventQueue::orderedInsert(Node *node) {
 
     //first sort by shipping events
     if (0 == newEvent->getLabel().compare(shipping)) {
-
         if (0 != topEvent->getLabel().compare(shipping)) { // if top is not shipping type event
             node->setNext(currentQueue->getTop());
             currentQueue->setTop(node);
@@ -280,7 +278,6 @@ void EventQueue::orderedInsert(Node *node) {
             curr->setNext(node);
         }
     } else {  //if newNode is not shipping event
-
         if (currentQueue->getTop()->getNext() == nullptr) { // if only one event in the queue
             if (0 != topEvent->getLabel().compare(shipping) && topOrderId > newOrderId) {
                 node->setNext(currentQueue->getTop());
@@ -314,8 +311,7 @@ void EventQueue::orderedInsert(Node *node) {
             node->setNext(curr->getNext());
             curr->setNext(node);
         }
-    }
-
+    }t
 }
 
 int EventQueue::getNumShippedItems() {

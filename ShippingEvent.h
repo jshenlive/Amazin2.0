@@ -11,18 +11,18 @@
 #include "PrepareEvent.h"
 
 class ShippingEvent : public Event {
-public:
-    static const int PRIMERO_SHIPPING_DAY;
-    static const int STANDARD_SHIPPING_DAY;
+    public:
+        static const int PRIMERO_SHIPPING_DAY;
+        static const int STANDARD_SHIPPING_DAY;
 
-    ShippingEvent();
+        ShippingEvent();
 
-    ShippingEvent(int, Order *);
+        ShippingEvent(int, Order *);
 
-    ~ShippingEvent();
+        ~ShippingEvent();
 
-    virtual void print() override;
+        virtual void print() override;
 
-    void calculatePenalty();
+        void calculatePenalty();
 };
 
