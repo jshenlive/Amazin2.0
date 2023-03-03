@@ -311,7 +311,7 @@ void EventQueue::orderedInsert(Node *node) {
             node->setNext(curr->getNext());
             curr->setNext(node);
         }
-    }t
+    }
 }
 
 int EventQueue::getNumShippedItems() {
